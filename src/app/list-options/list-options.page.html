@@ -1,0 +1,55 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-buttons slot="start">
+         <ion-back-button
+            text="Atras"
+            defaultHref="home"
+         ></ion-back-button>
+      </ion-buttons>
+
+      <ion-title>Validar Cédula</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-grid fixed>
+      <ion-row>
+         <ion-col size="12">
+            <ion-item class="ion-margin-top">
+               <ion-label position="floating" color="success" class="__lbl"
+                  >Cédula</ion-label
+               >
+               <ion-input type="text" maxlength="9" id="cedula" [(ngModel)]="cedula"></ion-input>
+            </ion-item>
+         </ion-col>
+      </ion-row>
+
+      <ion-row>
+         <ion-col size="12">
+            <ion-button
+               (click)="calculate()"
+               expand="block"
+               fill="outline"
+               shape="round"
+               color="secondary"
+               size="small"
+               class="ion-padding ion-margin-top"
+            >
+               Calcular
+            </ion-button>
+         </ion-col>
+      </ion-row>
+
+      <ion-row>
+         <ion-col size="12" class="ion-margin-top">
+            <h1 class="ion-text-center __Res">{{digito}}</h1>
+         </ion-col>
+      </ion-row>
+   </ion-grid>
+</ion-content>
+
+<ion-footer>
+   <ion-toolbar>
+      <ion-title class="footer">© Desarrollado por <b>CharlsDEV</b></ion-title>
+   </ion-toolbar>
+</ion-footer>

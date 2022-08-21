@@ -1,0 +1,45 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-buttons slot="start">
+         <ion-back-button
+            text="Atras"
+            defaultHref="home"
+         ></ion-back-button>
+      </ion-buttons>
+
+      <ion-title>Rick and Morty</ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="tertiary">
+         <ion-icon name="add-outline"></ion-icon>
+      </ion-fab-button>
+   </ion-fab> -->
+
+   <ion-list>
+      <ion-grid fixed>
+         <ion-row>
+            <ion-searchbar></ion-searchbar>
+         </ion-row>
+      </ion-grid>
+
+      <ion-item *ngFor="let personaje of personajes" [routerLink]="['personaje/' + personaje.id]">
+         <ion-avatar slot="start">
+            <img src="{{personaje.image}}" />
+         </ion-avatar>
+
+         <ion-label>
+            <h2>{{personaje.name}}</h2>
+            <p>{{personaje.species}} - {{personaje.status}}</p>
+            </ion-label>
+         </ion-item>
+   </ion-list>
+</ion-content>
+
+<ion-footer>
+   <ion-toolbar>
+      <ion-title class="footer">© Desarrollado por <b>CharlsDEV</b></ion-title>
+   </ion-toolbar>
+</ion-footer>
